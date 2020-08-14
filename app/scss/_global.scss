@@ -7,31 +7,56 @@ html {
 *::after {
     box-sizing: inherit;
 }
+
 a {
-    display: inline-block;
     text-decoration: none;
+    outline: transparent;
+}
+
+img {
+    display: block;
 }
 
 html,
 body {
     height: 100%;
-    // position: relative;
-    overflow-x: hidden;
+    position: relative;
+    // overflow-x: hidden; // с этим fancybox работает неправильно. странаца скролит наверх
+    font-family: "OpenSansCondensed-Light";
+    font-size: 18px;
+    line-height: 24px;
 }
+
 //прижать footer к низу 
 * {
     margin: 0;
     padding: 0;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100%;
 }
+
 .content {
-    background-color: $grey;
+    // background-color: $grey;
     flex: 1 0 auto;
 }
+
 .footer {
     flex: 0 0 auto;
 }
@@ -39,6 +64,84 @@ body {
 //   footer 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+.title {
+    text-align: center;
+    color: #2c240a;
+    font-family: "Roboto-Regular";
+    font-size: 26px;
+    line-height: 38px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+
+    &._active {
+        transform: translate(0px, 0%);
+        opacity: 1;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background-color: #2c240a;
+    }
+}
+
+._anim-hidden {
+    overflow: hidden;
+}
+
+._anim-show {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+._anim-show._active,
+._active ._anim-show {
+    transform: translate(0px, 0%);
+    opacity: 1;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input {
+    display: block;
+    padding: 0px 15px;
+
+    &.focus {}
+
+    &.err {
+        border: 1px solid red;
+    }
+}
+
+textarea {
+    padding: 10px 15px;
+}
+
+.header__burger {
+    display: none;
 }
