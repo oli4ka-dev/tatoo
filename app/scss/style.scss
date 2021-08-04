@@ -94,20 +94,21 @@
     letter-spacing: 1px;
     position: relative;
     z-index: 3;
+    transition: all .3s;
 }
 
 .item__drop-list {
     position: absolute;
     width: 220px;
-    top: 50px;
+    top: 60px;
     background-color: #fff;
     right: 0px;
     border: 1px solid #aaa03b;
-    transition: all .3s;
     border-bottom: 5px solid #aaa03b;
     opacity: 0;
     display: none;
     z-index: 3;
+    transition: all .3s;
 
     li {
         text-align: center;
@@ -133,19 +134,20 @@
 
 .item__drop-down {
     position: relative;
-    padding: 15px 45px 15px 15px;
+    padding: 10px 45px 15px 15px;
     transition: all .3s;
     border-top: 5px solid transparent;
-    margin-top: -7px;
+     border-bottom: 5px solid transparent;
     z-index: 3;
+     
 
     &::after {
         content: url(../images/arrow-2.svg);
         position: absolute;
         width: 16px;
         height: 16px;
-        top: 18px;
-        right: 15px;
+        top: 14px;
+        right: 16px;
         transition: all .3s;
         z-index: 3;
     }
@@ -154,7 +156,9 @@
         cursor: pointer;
         background-color: #fff;
         border-top: 5px solid #aaa03b;
-
+        border-bottom: 5px solid #aaa03b;
+        //  padding: 10px 45px 25px 15px;
+        
         &::after {
             transform: rotate(-180deg);
         }
@@ -162,6 +166,7 @@
         .item__drop-list {
             opacity: 1;
             display: block;
+              transition: all .3s;
         }
     }
 }
