@@ -438,10 +438,9 @@
         width: 100%;
         padding: 100px 0 0 0;
         background-color: #dddcd3;
-
         opacity: 0;
-        transform: perspective(600px) translate(0px, -100%) rotateY(180deg);
-        transition: all 1s ease 0s;
+        transform:translate(0px, -100%);
+        transition: all 0.5s ease 0s;
 
         & .scrollto {
             font-size: 22px;
@@ -472,7 +471,7 @@
         right: 0;
         width: 100%;
         background: #dddcd3;
-        transform: perspective(600px) translate(0px, 0%) rotateY(0deg);
+        transform:translate(0px, 0%);
         opacity: 1;
     }
 
