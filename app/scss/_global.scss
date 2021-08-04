@@ -53,7 +53,6 @@ h6 {
 }
 
 .content {
-    // background-color: $grey;
     flex: 1 0 auto;
 }
 
@@ -81,7 +80,6 @@ h6 {
     margin-bottom: 20px;
     display: inline-block;
     position: relative;
-
     transform: translate(0px, 120%);
     opacity: 0;
     transition: all 0.8s ease 0s;
@@ -130,8 +128,6 @@ textarea {
 .input {
     display: block;
     padding: 0px 15px;
-
-    &.focus {}
 
     &.err {
         border: 1px solid red;
